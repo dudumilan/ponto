@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+
+<body>
+
+    <canvas id="stars"></canvas>
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+<div class="music-controls">
+
+    <i class="fa-solid fa-volume-high"></i>
+
+    <input
+        type="range"
+        id="volume"
+        min="0"
+        max="100"
+        value="50"
+    >
+
+</div>
+    <header>
+
+        <h1>Feliz Aniversário!!!</h1>
+
+        <p class="subtitle">
+            Esse site foi feito especialmente para você.
+        </p>
+
+        <button id="playMusic">
+            <i class="fa-solid fa-play"></i>
+            Tocar Música
+        </button>
+
+    </header>
+
+    <section class="hero">
+
+        <div class="glass">
+
+            <h2>Hoje é o seu dia </h2>
+
+            <p>
+
+                Existem presentes que são comprados...
+
+                Outros são feitos com tempo, dedicação e carinho.
+
+                Então resolvi criar esse pequeno cantinho para desejar um feliz aniversário
+                de um jeito diferente.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="about">
+
+        <h2>Você é incrível</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <h3>Seu Sorriso</h3>
+
+                <p>
+                    Tem a capacidade de deixar o meu dia melhor.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-star"></i>
+
+                <h3>Seu Jeito</h3>
+
+                <p>
+                    É impossível não admirar quem você é.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-gift"></i>
+
+                <h3>Seu Dia</h3>
+
+                <p>
+
+                    Espero que hoje seja tão especial quanto você merece.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="gallerySection">
+
+    <h2> Você em Fotos </h2>
+
+    <p class="galleryText">
+        Escolhi algumas das minhas fotos favoritas suas. ❤️
+    </p>
+
+    <div class="gallery">
+
+        <img src="foto1.jpg" alt="Foto 1">
+
+        <img src="foto2.jpg" alt="Foto 2">
+
+        <img src="foto3.jpg" alt="Foto 3">
+
+    </div>
+
+</section>
+
+    <section class="motivos">
+
+        <h2> 29 Motivos</h2>
+
+        <p>
+            Clique em um botão ❤️
+        </p>
+
+        <button id="motivoBtn">
+
+            Descobrir
+
+        </button>
+
+        <div id="motivo"></div>
+
+    </section>
+
+    <section class="letter">
+
+        <div class="envelope">
+
+            <h2>Uma mensagem para você</h2>
+
+            <p>
+
+                Feliz aniversário!
+
+                Espero que seu novo ciclo seja cheio de momentos felizes,
+                pessoas especiais, muitos sorrisos e sonhos realizados.
+
+                Obrigado por fazer parte da minha vida.
+
+                Você merece tudo de melhor.
+
+                Espero que esse pequeno presente consiga deixar seu dia ainda
+                mais bonito.
+
+                ❤️
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="giftSection">
+
+        <h2>Abra seu presente</h2>
+
+        <button id="giftButton">
+
+            Abrir Presente
+
+        </button>
+
+        <div id="giftMessage"></div>
+
+    </section>
+
+    <section class="countdown">
+        
+
+        <h2>Um pequeno contador</h2>
+
+        <div id="timer"></div>
+
+    </section>
+
+    <section class="final">
+
+        <h2></h2>
+
+        <h1>Feliz Aniversário!</h1>
+
+        <p>
+
+            Hoje é um dia muito especial, porque é o dia de celebrar a pessoa incrível que você é.
+            Espero que este novo ciclo seja cheio de sorrisos sinceros, momentos felizes e sonhos realizados.
+            Nunca deixe de ser essa pessoa maravilhosa que consegue tornar os dias de quem está por perto muito melhores. Feliz aniversário! amo você ❤️
+
+        </p>
+
+    </section>
+
+    <section class="countdown">
+
+    <h2>Datas Especiais</h2>
+
+    <div class="timers">
+
+        <div class="timer-card">
+
+            <h3>Aniversário</h3>
+
+            <div id="timerBirthday"></div>
+
+        </div>
+
+        <div class="timer-card">
+
+            <h3>Nosso Encontro</h3>
+
+            <div id="timerMeet"></div>
+
+        </div>
+
+    </div>
+
+    </section>
+    <footer>
+
+        Feito especialmente para você.
+        De: Carlos Eduardo Milan Ferreira/dudumilan
+
+    </footer>
+    
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
