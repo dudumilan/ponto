@@ -38,7 +38,7 @@ const motivos = [
     "Você transmite felicidade.",
     "Você tem uma energia maravilhosa.",
     "Você é perfeita.",
-    "Você torna os dias melhores.",
+    "Você torna os meus dias melhores.",
     "Você faz esse presente valer a pena.",
     "Porque simplesmente... você é você e eu amo você ❤️"
 ];
@@ -251,61 +251,71 @@ function criarParticula(){
 
 setInterval(criarParticula,450);
 
-const timer=document.getElementById("timer");
+const timerBirthday = document.getElementById("timerBirthday");
+const timerMeet = document.getElementById("timerMeet");
 
-function atualizarContador(){
+function criarContador(data, elemento){
 
-    const aniversario=new Date("2026-07-29T00:00:00");
+    const agora = new Date();
 
-    const agora=new Date();
+    const diferenca = data - agora;
 
-    const diferenca=aniversario-agora;
+    if(diferenca <= 0){
 
-    if(diferenca<=0){
-
-        timer.innerHTML="<h2>🎉 Feliz Aniversário! ❤️</h2>";
+        elemento.innerHTML = "<h3>🎉 Chegou o grande dia!</h3>";
 
         return;
 
     }
 
-    const dias=Math.floor(diferenca/(1000*60*60*24));
+    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
 
-    const horas=Math.floor((diferenca%(1000*60*60*24))/(1000*60*60));
+    const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-    const minutos=Math.floor((diferenca%(1000*60*60))/(1000*60));
+    const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
 
-    const segundos=Math.floor((diferenca%(1000*60))/1000);
+    const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
-    timer.innerHTML=`
+    elemento.innerHTML = `
+        <div>
+            <span>${dias}</span>
+            <small>Dias</small>
+        </div>
 
-    <div>
-        <span>${dias}</span>
-        <small>Dias</small>
-    </div>
+        <div>
+            <span>${horas}</span>
+            <small>Horas</small>
+        </div>
 
-    <div>
-        <span>${horas}</span>
-        <small>Horas</small>
-    </div>
+        <div>
+            <span>${minutos}</span>
+            <small>Minutos</small>
+        </div>
 
-    <div>
-        <span>${minutos}</span>
-        <small>Minutos</small>
-    </div>
-
-    <div>
-        <span>${segundos}</span>
-        <small>Segundos</small>
-    </div>
-
+        <div>
+            <span>${segundos}</span>
+            <small>Segundos</small>
+        </div>
     `;
+}
+
+function atualizarContadores(){
+
+    criarContador(
+        new Date("2026-07-29T00:00:00"),
+        timerBirthday
+    );
+
+    criarContador(
+        new Date("2026-08-01T00:00:00"),
+        timerMeet
+    );
 
 }
 
-setInterval(atualizarContador,1000);
+setInterval(atualizarContadores,1000);
 
-atualizarContador();
+atualizarContadores();
 
 function confetes(){
 
