@@ -397,3 +397,118 @@ volume.addEventListener("input", () => {
     music.volume = volume.value / 100;
 
 });
+const backgroundDecor = document.getElementById("backgroundDecor");
+
+const imagens = [
+    "clove1.png",
+    "clove2.png",
+    "clove3.png",
+    "clove4.png"
+];
+
+const alturaPagina = document.documentElement.scrollHeight;
+
+const posicoes = [];
+
+function podeColocar(x, y, tamanho){
+
+    for(const p of posicoes){
+
+        const dx = x - p.x;
+        const dy = y - p.y;
+
+        const distancia = Math.sqrt(dx * dx + dy * dy);
+
+      
+        if(distancia < (tamanho + p.tamanho) * 0.55){
+            return false;
+        }
+
+    }
+
+    return true;
+
+}
+
+let ultimaImagem = -1;
+
+for(let i = 0; i < 60; i++){
+
+    let indice;
+
+    do{
+        indice = Math.floor(Math.random() * imagens.length);
+    }while(indice === ultimaImagem);
+
+    ultimaImagem = indice;
+
+    const tamanho = 70 + Math.random() * 70;
+
+    let x, y;
+    let tentativas = 0;
+
+    do{
+
+        x = Math.random() * (window.innerWidth - tamanho);
+        y = Math.random() * alturaPagina;
+
+        tentativas++;
+
+    }while(
+        !podeColocar(x, y, tamanho) &&
+        tentativas < 200
+    );
+
+    posicoes.push({
+        x,
+        y,
+        tamanho
+    });
+
+    const img = document.createElement("img");
+
+    img.src = imagens[indice];
+    img.className = "decor";
+
+    img.style.left = x + "px";
+    img.style.top = y + "px";
+
+    img.style.width = tamanho + "px";
+
+    img.style.opacity = 0.08 + Math.random() * 0.08;
+
+    img.style.animationDuration =
+        (6 + Math.random() * 5) + "s";
+
+    img.style.animationDelay =
+        (Math.random() * 6) + "s";
+
+    img.style.transform =
+        `rotate(${Math.random() * 360}deg)`;
+
+    backgroundDecor.appendChild(img);
+
+
+}
+
+window.addEventListener("load", criarDecoracoes);
+
+window.addEventListener("resize", criarDecoracoes);
+
+const decors = document.querySelectorAll(".decor");
+
+window.addEventListener("scroll", () => {
+
+    const scroll = window.pageYOffset;
+
+    decors.forEach((img, index) => {
+
+        const velocidade = (index % 5 + 1) * 0.08;
+
+        img.style.transform =
+        `translateY(${scroll * velocidade}px)
+         rotate(${index*35}deg)`;
+
+    });
+
+});
