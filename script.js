@@ -262,7 +262,7 @@ function criarContador(data, elemento){
 
     if(diferenca <= 0){
 
-        elemento.innerHTML = "<h3>🎉 Chegou o grande dia!</h3>";
+        elemento.innerHTML = "<h3>AMO VOCÊ ❤️</h3>";
 
         return;
 
