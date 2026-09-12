@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>💌 100 motivos</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+
+<body>
+
+    <canvas id="stars"></canvas>
+    <div id="backgroundDecor" class="background-decor"></div>
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="site-nav">
+        <button id="navToggle" class="nav-toggle" aria-label="Abrir menu">🦋</button>
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html">🏠 Início</a>
+            <a href="motivos.html">💌 100 Motivos</a>
+            <a href="galeria.html">📷 Galeria</a>
+            <a href="aniversario.html">🎂 Aniversário</a>
+        </div>
+    </div>
+
+    <div class="music-controls">
+        <i class="fa-solid fa-volume-high"></i>
+        <input type="range" id="volume" min="0" max="100" value="50">
+    </div>
+
+    <header class="header-secundario">
+
+        <h1>100 Motivos</h1>
+
+        <p class="subtitle">
+            Eu podia ter parado no 29. Mas todo dia eu acho um motivo novo pra
+            te amar, então aqui estão 100 — e olha que ainda cabiam mais.
+        </p>
+
+        <button id="playMusic" class="btn">
+            <i class="fa-solid fa-play"></i>
+            Tocar Música
+        </button>
+
+    </header>
+
+    <section class="motivos-full">
+
+        <div class="lista-motivos" id="listaMotivos"></div>
+
+    </section>
+
+    <footer>
+
+        Feito especialmente para você, com muito amor e carinho.
+        <br>
+        De: Carlos Eduardo Milan Ferreira/dudumilan
+
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="motivos.js"></script>
+
+</body>
+
+</html>

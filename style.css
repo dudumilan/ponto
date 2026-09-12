@@ -84,6 +84,7 @@ h1,h2,h3{
     font-weight:600;
 }
 
+
 .btn{
     padding:18px 44px;
     border:none;
@@ -108,31 +109,78 @@ button:active{
     transform:scale(.96);
 }
 
-.page-switch{
+
+.site-nav{
     position:fixed;
     top:22px;
     right:22px;
-    z-index:500;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:10px 22px;
-    border-radius:40px;
+    z-index:600;
+}
+
+.nav-toggle{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    border:1px solid var(--vidro-borda);
     background:var(--vidro-bg);
     backdrop-filter:blur(16px);
     -webkit-backdrop-filter:blur(16px);
-    border:1px solid var(--vidro-borda);
     color:var(--branco-lua);
-    text-decoration:none;
-    font-size:.85rem;
-    font-weight:500;
+    font-size:1.3rem;
+    cursor:pointer;
     transition:.3s;
 }
 
-.page-switch:hover{
-    transform:translateY(-3px);
-    border-color:rgba(255,255,255,.3);
+.nav-toggle:hover{
+    transform:scale(1.08) rotate(-8deg);
     box-shadow:var(--sombra-brilho);
+}
+
+.nav-menu{
+    position:absolute;
+    top:64px;
+    right:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(-12px);
+    transition:.3s;
+}
+
+.nav-menu.open{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+}
+
+.nav-menu a{
+    white-space:nowrap;
+    padding:12px 22px;
+    border-radius:40px;
+    background:var(--ameixa);
+    border:1px solid var(--vidro-borda);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    color:var(--branco-lua);
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:500;
+    text-align:right;
+    transition:.25s;
+    display:block;
+}
+
+.nav-menu a:hover{
+    transform:translateX(-4px);
+    background:var(--gradiente-aurora);
+    color:#1a1329;
+}
+
+.nav-menu a.active{
+    background:var(--gradiente-aurora);
+    color:#1a1329;
 }
 
 .memory-badge{
@@ -147,6 +195,7 @@ button:active{
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
 }
+
 
 header{
     min-height:100vh;
@@ -186,6 +235,7 @@ header h2{
     margin-top:45px;
 }
 
+
 .hero{
     display:flex;
     justify-content:center;
@@ -224,6 +274,7 @@ header h2{
     line-height:2;
     color:var(--lilas);
 }
+
 
 .about h2{
     text-align:center;
@@ -282,6 +333,7 @@ header h2{
     color:var(--lilas);
 }
 
+
 .gallerySection h2{
     text-align:center;
     font-size:2.7rem;
@@ -324,6 +376,7 @@ header h2{
     box-shadow:var(--sombra-brilho);
 }
 
+
 .motivos{
     text-align:center;
 }
@@ -363,6 +416,7 @@ header h2{
 #motivo:hover{
     transform:translateY(-8px);
 }
+
 
 .letter{
     display:flex;
@@ -404,6 +458,7 @@ header h2{
     text-align:center;
 }
 
+
 .giftSection{
     text-align:center;
 }
@@ -433,6 +488,7 @@ header h2{
     font-size:1.08rem;
     box-shadow:0 20px 40px rgba(0,0,0,.25);
 }
+
 
 .countdown{
     text-align:center;
@@ -773,6 +829,137 @@ footer::before{
     cursor:pointer;
 }
 
+@keyframes pulsarVolume{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+}
+
+.music-controls.tocando i{
+    color:var(--violeta);
+    animation:pulsarVolume 1.1s ease-in-out infinite;
+}
+
+.header-secundario{
+    min-height:auto;
+    padding:150px 40px 70px;
+}
+
+.frase-dia{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 30px;
+    max-width:600px;
+    background:var(--vidro-bg);
+    border:1px solid var(--vidro-borda);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-radius:30px;
+    color:var(--lilas);
+    font-size:.95rem;
+    line-height:1.6;
+}
+
+.link-secundario{
+    display:inline-block;
+    margin-top:28px;
+    color:var(--lilas);
+    text-decoration:underline;
+    text-underline-offset:4px;
+    font-size:.95rem;
+    transition:.25s;
+}
+
+.link-secundario:hover{
+    color:var(--rosa);
+}
+
+.motivos-full{
+    padding-top:30px;
+}
+
+.lista-motivos{
+    width:90%;
+    max-width:800px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.motivo-item{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    padding:22px 30px;
+    background:var(--vidro-bg);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border:1px solid var(--vidro-borda);
+    border-radius:22px;
+    opacity:0;
+    transform:translateY(30px);
+    transition:.6s ease;
+}
+
+.motivo-item.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.motivo-numero{
+    flex-shrink:0;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--gradiente-aurora);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:var(--fonte-titulo);
+    font-weight:700;
+    color:#1a1329;
+    font-size:.9rem;
+}
+
+.motivo-item p{
+    color:var(--branco-lua);
+    line-height:1.7;
+    font-size:1.02rem;
+}
+
+.contador-fotos{
+    margin-top:16px;
+    color:var(--lilas);
+    font-size:.95rem;
+}
+
+.galeria-secao{
+    padding-top:20px;
+}
+
+.galeria-completa{
+    width:92%;
+    max-width:1300px;
+    margin:auto;
+    column-count:3;
+    column-gap:24px;
+}
+
+.galeria-completa img{
+    width:100%;
+    margin-bottom:24px;
+    border-radius:22px;
+    break-inside:avoid;
+    cursor:pointer;
+    box-shadow:0 20px 45px rgba(0,0,0,.3);
+    transition:.4s;
+}
+
+.galeria-completa img:hover{
+    transform:scale(1.02);
+    box-shadow:var(--sombra-brilho);
+}
+
 ::-webkit-scrollbar{width:10px;}
 ::-webkit-scrollbar-track{background:var(--noite);}
 ::-webkit-scrollbar-thumb{background:var(--gradiente-aurora);border-radius:20px;}
@@ -791,6 +978,8 @@ footer::before{
     .countdown h2,
     .motivos h2{font-size:2.1rem;}
     .final h1{font-size:2.8rem;}
+    .galeria-completa{column-count:2;}
+    .header-secundario{padding:130px 30px 50px;}
 
 }
 
@@ -813,11 +1002,20 @@ footer::before{
     .heart{font-size:18px;}
     .sparkle{width:6px;height:6px;}
 
-    .page-switch{
+    .site-nav{
         top:14px;
         right:14px;
-        padding:8px 14px;
-        font-size:.72rem;
+    }
+
+    .nav-toggle{
+        width:44px;
+        height:44px;
+        font-size:1.1rem;
+    }
+
+    .nav-menu a{
+        padding:10px 18px;
+        font-size:.82rem;
     }
 
     .music-controls{
@@ -827,6 +1025,17 @@ footer::before{
     }
 
     #volume{width:80px;}
+
+    .galeria-completa{column-count:1;}
+
+    .motivo-item{
+        padding:18px 20px;
+        gap:16px;
+    }
+
+    .motivo-item p{font-size:.95rem;}
+
+    .header-secundario{padding:120px 20px 40px;}
 
 }
 

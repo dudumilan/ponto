@@ -26,7 +26,15 @@
         <source src="music.mp3" type="audio/mp3">
     </audio>
 
-    <a href="aniversario.html" class="page-switch">🎂 ver o aniversário</a>
+    <div class="site-nav">
+        <button id="navToggle" class="nav-toggle" aria-label="Abrir menu">🦋</button>
+        <div class="nav-menu" id="navMenu">
+            <a href="index.html">🏠 Início</a>
+            <a href="motivos.html">💌 100 Motivos</a>
+            <a href="galeria.html">📷 Galeria</a>
+            <a href="aniversario.html">🎂 Aniversário</a>
+        </div>
+    </div>
 
     <div class="music-controls">
         <i class="fa-solid fa-volume-high"></i>
@@ -41,6 +49,10 @@
             Não é sobre uma data específica. É só um pedaço da internet que eu
             fiz pra te lembrar, sempre que eu quiser, o quanto você é incrível.
         </p>
+
+        <div class="frase-dia">
+            💌 <span id="fraseDoDia"></span>
+        </div>
 
         <button id="playMusic" class="btn">
             <i class="fa-solid fa-play"></i>
@@ -134,6 +146,10 @@
 
         </div>
 
+        <br>
+
+        <a href="galeria.html" class="link-secundario">ver todas as fotos</a>
+
     </section>
 
     <section class="motivos">
@@ -152,6 +168,10 @@
 
         <div id="motivo"></div>
 
+        <br>
+
+        <a href="motivos.html" class="link-secundario">ver os 100 motivos completos</a>
+
     </section>
 
     <section class="countdown">
@@ -162,7 +182,7 @@
 
             <div class="timer-card">
 
-                <h3>Primeira vez que te vi!</h3>
+                <h3>Juntos há</h3>
 
                 <div id="timerJuntos" class="timer-display"></div>
 

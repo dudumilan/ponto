@@ -12,12 +12,20 @@ if(music && playMusic){
 
         if(music.paused){
             music.play();
-            playMusic.innerHTML = '<i class="fa-solid fa-pause"></i> Pausar Música';
         }else{
             music.pause();
-            playMusic.innerHTML = '<i class="fa-solid fa-play"></i> Tocar Música';
         }
 
+    });
+
+    music.addEventListener("play", () => {
+        playMusic.innerHTML = '<i class="fa-solid fa-pause"></i> Pausar Música';
+        document.querySelectorAll(".music-controls").forEach(el => el.classList.add("tocando"));
+    });
+
+    music.addEventListener("pause", () => {
+        playMusic.innerHTML = '<i class="fa-solid fa-play"></i> Tocar Música';
+        document.querySelectorAll(".music-controls").forEach(el => el.classList.remove("tocando"));
     });
 
 }
@@ -26,6 +34,33 @@ if(music && volume){
 
     volume.addEventListener("input", () => {
         music.volume = volume.value / 100;
+    });
+
+}
+
+
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.getElementById("navMenu");
+
+if(navToggle && navMenu){
+
+    navToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle("open");
+    });
+
+    const paginaAtual = location.pathname.split("/").pop() || "index.html";
+
+    navMenu.querySelectorAll("a").forEach(link => {
+        if(link.getAttribute("href") === paginaAtual){
+            link.classList.add("active");
+        }
+    });
+
+    document.addEventListener("click", (e) => {
+        if(!navToggle.contains(e.target) && !navMenu.contains(e.target)){
+            navMenu.classList.remove("open");
+        }
     });
 
 }
@@ -59,7 +94,78 @@ const motivos = [
     "Você é perfeita.",
     "Você torna os meus dias melhores.",
     "Você faz esse presente valer a pena.",
-    "Porque simplesmente... você é você e eu amo você ❤️"
+    "Porque simplesmente... você é você e eu amo você ❤️",
+    "Você lembra dos detalhes que eu acho que ninguém prestou atenção.",
+    "Você defende o que acredita, mesmo quando é mais fácil ficar calada.",
+    "Seu jeito de falar rápido quando fica animada com alguma coisa é a coisa mais fofa do mundo.",
+    "Você ri das minhas piadas ruins, mesmo sabendo que são ruins.",
+    "Você é competitiva até debaixo d'água, e eu acho isso incrível.",
+    "Você não desiste fácil de nada que quer de verdade.",
+    "Seu jeito de cuidar das pessoas que você ama é gigante.",
+    "Você tem opinião sobre tudo, e eu amo ouvir cada uma delas.",
+    "Você fica linda até nos dias em que acha que não está.",
+    "Você me ouve de verdade, não só espera a sua vez de falar.",
+    "Você comemora as pequenas vitórias como se fossem enormes.",
+    "Seu jeito de ficar brava é engraçado e assustador ao mesmo tempo, e mesmo assim eu amo.",
+    "Você é sincera até quando dói.",
+    "Você tem bom gosto pra praticamente tudo.",
+    "Você guarda memórias de coisas que eu nem lembrava que tinha dito.",
+    "Você não tem medo de ser exatamente quem você é.",
+    "Seu jeito de ficar concentrada jogando é hipnotizante.",
+    "Você comemora quando dá um clutch como se tivesse ganho um campeonato.",
+    "Você não me deixa acomodar, sempre me puxa pra frente.",
+    "Você tem uma criatividade que me surpreende toda vez.",
+    "Seu abraço, mesmo que só de imaginação, resolve qualquer dia ruim.",
+    "Você acredita em mim até nos dias em que eu não acredito.",
+    "Você tem paciência comigo mesmo quando eu não mereço.",
+    "Seu jeito de contar uma história do nada, cheia de detalhes, me faz rir.",
+    "Você é curiosa sobre o mundo, e isso é lindo de ver.",
+    "Você não esconde quem você é pra agradar ninguém.",
+    "Sua voz é uma das minhas coisas favoritas de ouvir.",
+    "Você fica feliz com coisas simples, e isso é raro hoje em dia.",
+    "Você é leal com quem você ama.",
+    "Você tem um jeito de fazer qualquer lugar parecer mais gostoso de estar.",
+    "Você me desafia a pensar diferente, e eu gosto disso.",
+    "Seu jeito de quase dormir enquanto a gente tá em call é engraçado e fofo ao mesmo tempo.",
+    "Você tem uma força que nem sempre você mesma percebe que tem.",
+    "Você faz eu rir até nos dias em que eu não tava com vontade.",
+    "Você defende seus amigos com unhas e dentes.",
+    "Você tem gosto musical bom (às vezes).",
+    "Você fica brilhando quando fala de alguma coisa que ama.",
+    "Você é engraçada sem nem tentar.",
+    "Você tem um jeito único de ver o mundo.",
+    "Você me faz sentir em casa, mesmo à distância.",
+    "Você é a pessoa que eu quero contar as coisas boas primeiro.",
+    "Você também é a pessoa que eu quero contar as coisas ruins primeiro.",
+    "Você não julga meus gostos estranhos.",
+    "Você aceita minhas manias sem reclamar (muito).",
+    "Você tem um coração enorme pra quem te conhece de verdade.",
+    "Você faz eu acreditar em coisas boas de novo.",
+    "Seu jeito de ficar orgulhosa de mim me deixa sem palavras.",
+    "Você tem uma memória absurda pra detalhes bobos, e eu amo isso.",
+    "Você sabe me acalmar quando eu tô ansioso.",
+    "Você tem estilo próprio, e isso é raro.",
+    "Você luta pelas coisas que quer na vida.",
+    "Você é gentil até quando ninguém tá olhando.",
+    "Você faz eu querer estar por perto, mesmo em dias silenciosos.",
+    "Você tem senso de humor ácido que me pega de surpresa.",
+    "Você é a primeira pessoa que eu quero mandar mensagem quando algo bom acontece.",
+    "Você não tem vergonha de ser intensa quando ama alguma coisa.",
+    "Você trata as pessoas com respeito, mesmo quando não precisa.",
+    "Você tem gestos pequenos que significam muito pra mim.",
+    "Você é imprevisível de um jeito bom.",
+    "Você faz eu rir só de mandar um áudio bobo.",
+    "Você tem uma vontade de crescer que me inspira.",
+    "Você não fecha os olhos pros meus defeitos, e mesmo assim fica.",
+    "Seu jeito de comemorar coisas pequenas faz elas parecerem gigantes.",
+    "Você é a pessoa mais teimosa que eu conheço, e de um jeito bom.",
+    "Você tem um jeito de me fazer sentir importante sem nem perceber.",
+    "Você guarda um espaço pra mim mesmo nos dias corridos.",
+    "Você é a definição de \"vale a pena esperar\".",
+    "Você faz eu acreditar que a gente pode construir uma coisa boa juntos.",
+    "Você é a minha pessoa favorita pra dividir silêncio também.",
+    "Cada motivo dessa lista é verdade, e ainda cabia mais cem.",
+    "Porque, no fim das contas, é sempre você. ❤️"
 ];
 
 const motivoBtn = document.getElementById("motivoBtn");
@@ -90,6 +196,7 @@ if(motivoBtn && motivoEl){
 
 }
 
+
 function configurarPresente(mensagemHTML, textoAberto){
 
     const giftButton = document.getElementById("giftButton");
@@ -108,6 +215,7 @@ function configurarPresente(mensagemHTML, textoAberto){
     });
 
 }
+
 
 function dispararConfete(){
 
@@ -140,6 +248,7 @@ function dispararConfete(){
     }
 
 }
+
 
 function partesDoTempo(ms){
 
@@ -190,34 +299,31 @@ document.querySelectorAll("section").forEach(section => {
     observer.observe(section);
 });
 
-const galleryImages = document.querySelectorAll(".gallery img, .polaroid img");
 
-if(galleryImages.length){
+const lightbox = document.createElement("div");
+lightbox.className = "lightbox";
 
-    const lightbox = document.createElement("div");
-    lightbox.className = "lightbox";
+const lightImage = document.createElement("img");
+lightbox.appendChild(lightImage);
 
-    const lightImage = document.createElement("img");
-    lightbox.appendChild(lightImage);
+document.body.appendChild(lightbox);
 
-    document.body.appendChild(lightbox);
+document.addEventListener("click", (e) => {
 
-    galleryImages.forEach(image => {
+    const alvo = e.target.closest(".gallery img, .polaroid img, .galeria-completa img");
 
-        image.style.cursor = "pointer";
+    if(alvo){
+        lightbox.classList.add("active");
+        lightImage.src = alvo.src;
+        return;
+    }
 
-        image.addEventListener("click", () => {
-            lightbox.classList.add("active");
-            lightImage.src = image.src;
-        });
-
-    });
-
-    lightbox.addEventListener("click", () => {
+    if(lightbox.classList.contains("active")){
         lightbox.classList.remove("active");
-    });
+    }
 
-}
+});
+
 
 const canvas = document.getElementById("stars");
 
@@ -294,6 +400,7 @@ function criarCoracao(){
 
 setInterval(criarCoracao, 600);
 
+
 function criarParticula(){
 
     const sparkle = document.createElement("div");
@@ -312,6 +419,7 @@ function criarParticula(){
 }
 
 setInterval(criarParticula, 450);
+
 
 let ultimoBrilho = 0;
 
@@ -349,6 +457,7 @@ document.addEventListener("mousemove", (e) => {
     }, 800);
 
 });
+
 
 const backgroundDecor = document.getElementById("backgroundDecor");
 
