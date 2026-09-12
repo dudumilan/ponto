@@ -66,106 +66,213 @@ if(navToggle && navMenu){
 }
 
 const motivos = [
-    "Seu sorriso deixa qualquer dia mais bonito.",
-    "Você é uma pessoa incrível.",
-    "Seu jeitinho é único.",
-    "Sua risada é contagiante.",
-    "Você merece tudo de melhor.",
-    "Você é a melhor clove que eu ja vi jogar.",
-    "Você é muito boa no valorant.",
-    "Você me inspira a ser uma pessoa melhor.",
-    "Eu amo ficar em call com você.",
-    "Você é muito especial.",
-    "Seu olhar me hipnotiza.",
-    "Você tem um jeito encantador meio louco mas encantador.",
-    "Você faz os pequenos momentos valerem a pena.",
-    "Seu carinho é admirável.",
-    "Você sempre consegue arrancar um sorriso meu.",
-    "Você é linda por dentro e por fora.",
-    "Sua personalidade é maravilhosa.",
-    "Você tem um brilho único.",
-    "Você é forte e determinada.",
-    "Você faz o meu mundo ficar mais bonito.",
-    "Você é um dos meus sonhos.",
-    "Seu bom humor é incrível.",
-    "Você é inesquecível.",
-    "Você transmite felicidade.",
-    "Você tem uma energia maravilhosa.",
-    "Você é perfeita.",
-    "Você torna os meus dias melhores.",
-    "Você faz esse presente valer a pena.",
-    "Porque simplesmente... você é você e eu amo você ❤️",
-    "Você lembra dos detalhes que eu acho que ninguém prestou atenção.",
-    "Você defende o que acredita, mesmo quando é mais fácil ficar calada.",
-    "Seu jeito de falar rápido quando fica animada com alguma coisa é a coisa mais fofa do mundo.",
-    "Você ri das minhas piadas ruins, mesmo sabendo que são ruins.",
-    "Você é competitiva até debaixo d'água, e eu acho isso incrível.",
-    "Você não desiste fácil de nada que quer de verdade.",
-    "Seu jeito de cuidar das pessoas que você ama é gigante.",
-    "Você tem opinião sobre tudo, e eu amo ouvir cada uma delas.",
-    "Você fica linda até nos dias em que acha que não está.",
-    "Você me ouve de verdade, não só espera a sua vez de falar.",
-    "Você comemora as pequenas vitórias como se fossem enormes.",
-    "Seu jeito de ficar brava é engraçado e assustador ao mesmo tempo, e mesmo assim eu amo.",
-    "Você é sincera até quando dói.",
-    "Você tem bom gosto pra praticamente tudo.",
-    "Você guarda memórias de coisas que eu nem lembrava que tinha dito.",
-    "Você não tem medo de ser exatamente quem você é.",
-    "Seu jeito de ficar concentrada jogando é hipnotizante.",
-    "Você comemora quando dá um clutch como se tivesse ganho um campeonato.",
-    "Você não me deixa acomodar, sempre me puxa pra frente.",
-    "Você tem uma criatividade que me surpreende toda vez.",
-    "Seu abraço, mesmo que só de imaginação, resolve qualquer dia ruim.",
-    "Você acredita em mim até nos dias em que eu não acredito.",
-    "Você tem paciência comigo mesmo quando eu não mereço.",
-    "Seu jeito de contar uma história do nada, cheia de detalhes, me faz rir.",
-    "Você é curiosa sobre o mundo, e isso é lindo de ver.",
-    "Você não esconde quem você é pra agradar ninguém.",
-    "Sua voz é uma das minhas coisas favoritas de ouvir.",
-    "Você fica feliz com coisas simples, e isso é raro hoje em dia.",
-    "Você é leal com quem você ama.",
-    "Você tem um jeito de fazer qualquer lugar parecer mais gostoso de estar.",
-    "Você me desafia a pensar diferente, e eu gosto disso.",
-    "Seu jeito de quase dormir enquanto a gente tá em call é engraçado e fofo ao mesmo tempo.",
-    "Você tem uma força que nem sempre você mesma percebe que tem.",
-    "Você faz eu rir até nos dias em que eu não tava com vontade.",
-    "Você defende seus amigos com unhas e dentes.",
-    "Você tem gosto musical bom (às vezes).",
-    "Você fica brilhando quando fala de alguma coisa que ama.",
-    "Você é engraçada sem nem tentar.",
-    "Você tem um jeito único de ver o mundo.",
-    "Você me faz sentir em casa, mesmo à distância.",
-    "Você é a pessoa que eu quero contar as coisas boas primeiro.",
-    "Você também é a pessoa que eu quero contar as coisas ruins primeiro.",
-    "Você não julga meus gostos estranhos.",
-    "Você aceita minhas manias sem reclamar (muito).",
-    "Você tem um coração enorme pra quem te conhece de verdade.",
-    "Você faz eu acreditar em coisas boas de novo.",
-    "Seu jeito de ficar orgulhosa de mim me deixa sem palavras.",
-    "Você tem uma memória absurda pra detalhes bobos, e eu amo isso.",
-    "Você sabe me acalmar quando eu tô ansioso.",
-    "Você tem estilo próprio, e isso é raro.",
-    "Você luta pelas coisas que quer na vida.",
-    "Você é gentil até quando ninguém tá olhando.",
-    "Você faz eu querer estar por perto, mesmo em dias silenciosos.",
-    "Você tem senso de humor ácido que me pega de surpresa.",
-    "Você é a primeira pessoa que eu quero mandar mensagem quando algo bom acontece.",
-    "Você não tem vergonha de ser intensa quando ama alguma coisa.",
-    "Você trata as pessoas com respeito, mesmo quando não precisa.",
-    "Você tem gestos pequenos que significam muito pra mim.",
-    "Você é imprevisível de um jeito bom.",
-    "Você faz eu rir só de mandar um áudio bobo.",
-    "Você tem uma vontade de crescer que me inspira.",
-    "Você não fecha os olhos pros meus defeitos, e mesmo assim fica.",
-    "Seu jeito de comemorar coisas pequenas faz elas parecerem gigantes.",
-    "Você é a pessoa mais teimosa que eu conheço, e de um jeito bom.",
-    "Você tem um jeito de me fazer sentir importante sem nem perceber.",
-    "Você guarda um espaço pra mim mesmo nos dias corridos.",
-    "Você é a definição de \"vale a pena esperar\".",
-    "Você faz eu acreditar que a gente pode construir uma coisa boa juntos.",
-    "Você é a minha pessoa favorita pra dividir silêncio também.",
-    "Cada motivo dessa lista é verdade, e ainda cabia mais cem.",
-    "Porque, no fim das contas, é sempre você. ❤️"
+
+    "Porque seu sorriso consegue mudar completamente o clima de um dia.",
+
+    "Porque seu jeito de ser é uma das coisas que mais me encanta em você.",
+
+    "Porque eu nunca me canso de ouvir sua voz.",
+
+    "Porque qualquer partida fica mais divertida quando é com você.",
+
+    "Porque você consegue transformar uma partida comum em uma memória que eu vou guardar.",
+
+    "Porque você joga de Clove como se tivesse nascido para isso.",
+
+    "Porque até quando você faz uma jogada absurda parece que foi fácil.",
+
+    "Porque você é uma das pessoas mais habilidosas com quem eu já joguei Valorant.",
+
+    "Porque suas plays de Clove são simplesmente inacreditáveis.",
+
+    "Porque eu adoro quando você entra no modo competitivo e começa a levar a partida a sério.",
+
+    "Porque você fica ainda mais incrível quando está concentrada jogando.",
+
+    "Porque eu adoro ouvir você comemorando depois de uma jogada muito boa.",
+
+    "Porque até perder uma partida fica menos ruim quando estou jogando com você.",
+
+    "Porque nossas calls conseguem fazer o tempo passar rápido demais.",
+
+    "Porque algumas das minhas melhores lembranças começaram simplesmente com uma call com você.",
+
+    "Porque você consegue me fazer rir sem nem perceber.",
+
+    "Porque seu jeito espontâneo é uma das coisas mais bonitas em você.",
+
+    "Porque você não precisa tentar ser interessante para conseguir prender minha atenção.",
+
+    "Porque eu gosto de ouvir até as histórias mais aleatórias que você conta.",
+
+    "Porque conversar com você nunca parece uma obrigação.",
+
+    "Porque com você até ficar em silêncio parece confortável.",
+
+    "Porque sua presença faz diferença mesmo quando você não percebe.",
+
+    "Porque eu sempre fico feliz quando vejo que você está online.",
+
+    "Porque uma simples mensagem sua consegue melhorar meu dia.",
+
+    "Porque eu gosto de saber como foi seu dia.",
+
+    "Porque eu gosto quando você compartilha comigo as pequenas coisas que acontecem com você.",
+
+    "Porque você faz eu querer conhecer cada vez mais o seu jeito de pensar.",
+
+    "Porque você tem uma personalidade que não dá para confundir com a de ninguém.",
+
+    "Porque você tem um jeito único de falar e se expressar.",
+
+    "Porque sua risada é uma das minhas coisas favoritas.",
+
+    "Porque você consegue ser engraçada sem precisar se esforçar.",
+
+    "Porque você tem um humor que sempre consegue me pegar desprevenido.",
+
+    "Porque até suas reclamações durante uma partida conseguem me fazer sorrir.",
+
+    "Porque eu adoro quando você fica indignada com alguma coisa no jogo.",
+
+    "Porque você comemorando uma vitória é quase tão divertido quanto a própria vitória.",
+
+    "Porque eu gosto até dos seus momentos de rage no Valorant.",
+
+    "Porque você consegue transformar uma derrota em uma história engraçada depois.",
+
+    "Porque eu adoro quando você fala 'confia' e alguma coisa completamente absurda acontece.",
+
+    "Porque você tem uma confiança jogando que eu admiro muito.",
+
+    "Porque você não desiste fácil quando realmente quer alguma coisa.",
+
+    "Porque sua determinação é uma das características que mais admiro em você.",
+
+    "Porque você tem uma força que talvez nem perceba que possui.",
+
+    "Porque você consegue continuar sendo você mesma mesmo quando as coisas não estão perfeitas.",
+
+    "Porque eu admiro a maneira como você enfrenta seus próprios dias difíceis.",
+
+    "Porque você tem muito mais valor do que talvez consiga enxergar em si mesma.",
+
+    "Porque você merece ser lembrada de todas as coisas boas que existem em você.",
+
+    "Porque eu gosto da maneira como você trata as pessoas que são importantes para você.",
+
+    "Porque seu carinho aparece até nos pequenos detalhes.",
+
+    "Porque você consegue fazer alguém se sentir importante sem precisar dizer muita coisa.",
+
+    "Porque eu gosto quando você lembra de coisas que eu falei há muito tempo.",
+
+    "Porque esses pequenos detalhes ficam muito maiores para mim do que você imagina.",
+
+    "Porque eu gosto da maneira como você consegue ser você mesma comigo.",
+
+    "Porque eu sinto que posso ser eu mesmo quando estou falando com você.",
+
+    "Porque nunca precisei fingir ser outra pessoa para conseguir conversar com você.",
+
+    "Porque eu gosto da nossa liberdade de falar besteira um com o outro.",
+
+    "Porque nossas conversas conseguem ir de assuntos sérios para a maior bobagem em questão de segundos.",
+
+    "Porque você consegue deixar momentos simples muito mais especiais.",
+
+    "Porque eu guardo com carinho vários momentos que talvez para você tenham parecido completamente normais.",
+
+    "Porque aquele pouco tempo que tivemos juntos pessoalmente significou muito para mim.",
+
+    "Porque mesmo tendo sido pouco tempo, eu aproveitei cada segundo ao seu lado.",
+
+    "Porque te ver pessoalmente fez tudo aquilo que eu já gostava em você parecer ainda mais real.",
+
+    "Porque depois daquele momento eu passei a valorizar ainda mais cada conversa nossa.",
+
+    "Porque eu ainda lembro de como foi bom simplesmente estar perto de você.",
+
+    "Porque eu gostaria de viver muitos outros momentos assim com você algum dia.",
+
+    "Porque você é ainda mais bonita pessoalmente do que eu conseguia imaginar.",
+
+    "Porque seu jeito pessoalmente conseguiu me encantar tanto quanto seu jeito nas calls.",
+
+    "Porque estar perto de você foi um daqueles momentos que eu queria que durassem mais.",
+
+    "Porque mesmo depois de tanto tempo jogando juntos, você ainda consegue me surpreender.",
+
+    "Porque eu nunca achei que uma pessoa que conheci jogando pudesse se tornar tão importante para mim.",
+
+    "Porque uma partida de Valorant acabou virando parte de uma amizade que significa muito para mim.",
+
+    "Porque entre tantas pessoas que eu poderia ter conhecido no jogo, eu tive a sorte de conhecer você.",
+
+    "Porque eu gosto da história que existe por trás de nós dois.",
+
+    "Porque nossas memórias são especiais justamente porque aconteceram naturalmente.",
+
+    "Porque eu adoro lembrar das partidas antigas que jogamos juntos.",
+
+    "Porque algumas músicas, lugares ou situações acabam me fazendo lembrar de você.",
+
+    "Porque você deixou sua marca em vários dos meus momentos favoritos.",
+
+    "Porque eu gosto de imaginar quantas outras memórias ainda podemos criar.",
+
+    "Porque você consegue fazer uma noite comum parecer muito mais divertida.",
+
+    "Porque eu poderia passar horas em call com você sem perceber o tempo passar.",
+
+    "Porque eu nunca acho que conversar com você está sendo perda de tempo.",
+
+    "Porque até quando não temos assunto, eu ainda gosto de estar ali.",
+
+    "Porque sua companhia é boa mesmo quando não estamos fazendo nada de especial.",
+
+    "Porque você tem um jeito que faz eu querer ficar por perto.",
+
+    "Porque você me faz sorrir em momentos em que eu nem estava esperando sorrir.",
+
+    "Porque você consegue deixar dias ruins um pouco mais leves.",
+
+    "Porque eu gosto de saber que existe alguém como você na minha vida.",
+
+    "Porque você é uma daquelas pessoas que a gente conhece e não esquece.",
+
+    "Porque você conseguiu se tornar especial sem precisar fazer nada extraordinário.",
+
+    "Porque foram vários pequenos momentos que fizeram eu gostar tanto de você.",
+
+    "Porque eu admiro muito a pessoa que você é.",
+
+    "Porque eu acho incrível a maneira como você consegue ser tão única.",
+
+    "Porque quanto mais eu conheço você, mais coisas encontro para admirar.",
+
+    "Porque eu poderia escrever muito mais do que cem motivos sobre você.",
+
+    "Porque até depois de escrever noventa e nove motivos eu ainda teria coisa para falar.",
+
+    "Porque você é uma pessoa que eu tenho muita sorte de ter conhecido.",
+
+    "Porque você ocupa um espaço muito especial nas minhas melhores lembranças.",
+
+    "Porque eu gosto de você pelo seu jeito, pelas suas manias, pelas suas qualidades e até pelas suas pequenas implicâncias.",
+
+    "Porque você não precisa ser perfeita para ser incrível para mim.",
+
+    "Porque ser você mesma já é mais do que suficiente.",
+
+    "Porque entre tantas pessoas no mundo, foi justamente você quem conseguiu conquistar um lugar tão especial no meu coração.",
+
+    "Porque cada call, cada partida, cada conversa e cada momento ao seu lado acabou significando mais do que eu esperava.",
+
+    "Porque eu sou muito feliz por ter conhecido você.",
+
+    "Porque, no fim de todos esses motivos, existe um que explica todos os outros: eu gosto muito de você. ❤️"
+
 ];
 
 const motivoBtn = document.getElementById("motivoBtn");

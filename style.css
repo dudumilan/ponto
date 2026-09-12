@@ -954,6 +954,11 @@ footer::before{
     box-shadow:0 20px 45px rgba(0,0,0,.3);
     transition:.4s;
 }
+.foto5 {
+    object-fit: cover;
+    object-position: 70% 50%;
+}
+
 
 .galeria-completa img:hover{
     transform:scale(1.02);
