@@ -1,3 +1,4 @@
+
 :root{
     --noite:#120e1c;
     --ameixa:#241c36;
@@ -84,6 +85,10 @@ h1,h2,h3{
     font-weight:600;
 }
 
+.foto5 {
+    object-fit: cover;
+    object-position: 90% 40%;
+}
 
 .btn{
     padding:18px 44px;
@@ -540,8 +545,8 @@ header h2{
     width:120px;
     height:120px;
     background:rgba(255,255,255,.06);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
     border-radius:26px;
     border:1px solid var(--vidro-borda);
     display:flex;
@@ -569,6 +574,7 @@ header h2{
 .timer-display h3{
     color:var(--rosa);
 }
+
 
 .final{
     text-align:center;
@@ -598,6 +604,7 @@ header h2{
     color:var(--lilas);
 }
 
+
 footer{
     padding:50px 20px;
     text-align:center;
@@ -612,6 +619,7 @@ footer::before{
     color:var(--rosa);
     margin-bottom:10px;
 }
+
 
 .future-gallery{
     padding:120px 20px;
@@ -692,6 +700,7 @@ footer::before{
     line-height:1.8;
 }
 
+
 #backgroundDecor{
     position:absolute;
     top:0;
@@ -712,8 +721,7 @@ footer::before{
     filter:
         brightness(0)
         invert(1)
-        drop-shadow(0 0 14px rgba(255,143,209,.55))
-        drop-shadow(0 8px 20px rgba(0,0,0,.35));
+        drop-shadow(0 0 9px rgba(255,143,209,.55));
 }
 
 @keyframes balancar{
@@ -723,6 +731,7 @@ footer::before{
     75%{transform:translateY(-10px) rotate(8deg) scale(1.03);}
     100%{transform:translateY(0) rotate(-18deg) scale(1);}
 }
+
 
 .fade{
     opacity:0;
@@ -802,6 +811,7 @@ footer::before{
     100%{transform:translateY(-200px) scale(0);opacity:0;}
 }
 
+
 .music-controls{
     position:fixed;
     top:22px;
@@ -839,10 +849,12 @@ footer::before{
     animation:pulsarVolume 1.1s ease-in-out infinite;
 }
 
+
 .header-secundario{
     min-height:auto;
     padding:150px 40px 70px;
 }
+
 
 .frase-dia{
     display:inline-block;
@@ -859,6 +871,7 @@ footer::before{
     line-height:1.6;
 }
 
+
 .link-secundario{
     display:inline-block;
     margin-top:28px;
@@ -872,6 +885,7 @@ footer::before{
 .link-secundario:hover{
     color:var(--rosa);
 }
+
 
 .motivos-full{
     padding-top:30px;
@@ -891,9 +905,7 @@ footer::before{
     align-items:center;
     gap:22px;
     padding:22px 30px;
-    background:var(--vidro-bg);
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
+    background:rgba(36,28,54,.55);
     border:1px solid var(--vidro-borda);
     border-radius:22px;
     opacity:0;
@@ -927,11 +939,13 @@ footer::before{
     font-size:1.02rem;
 }
 
+
 .contador-fotos{
     margin-top:16px;
     color:var(--lilas);
     font-size:.95rem;
 }
+
 
 .galeria-secao{
     padding-top:20px;
@@ -954,22 +968,19 @@ footer::before{
     box-shadow:0 20px 45px rgba(0,0,0,.3);
     transition:.4s;
 }
-.foto5 {
-    object-fit: cover;
-    object-position: 70% 50%;
-}
-
 
 .galeria-completa img:hover{
     transform:scale(1.02);
     box-shadow:var(--sombra-brilho);
 }
 
+
 ::-webkit-scrollbar{width:10px;}
 ::-webkit-scrollbar-track{background:var(--noite);}
 ::-webkit-scrollbar-thumb{background:var(--gradiente-aurora);border-radius:20px;}
 ::-webkit-scrollbar-thumb:hover{background:var(--violeta);}
 ::selection{background:var(--violeta);color:var(--branco-lua);}
+
 
 @media(max-width:900px){
 

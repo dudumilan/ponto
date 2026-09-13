@@ -1,6 +1,6 @@
 # ponto ❤️
 
-Site pessoal feito para quem eu gosto muito
+Site pessoal feito para a minha namorada.
 
 - `index.html` — o cantinho principal, sempre atualizado, com fotos, motivos
   e uma mensagem pra ela. Tema visual inspirado na Clove, do Valorant.

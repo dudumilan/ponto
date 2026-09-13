@@ -1,3 +1,6 @@
+
+
+
 const music = document.getElementById("music");
 const playMusic = document.getElementById("playMusic");
 const volume = document.getElementById("volume");
@@ -38,7 +41,6 @@ if(music && volume){
 
 }
 
-
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
 
@@ -65,9 +67,9 @@ if(navToggle && navMenu){
 
 }
 
-const motivos = [
 
-    "Porque seu sorriso consegue mudar completamente o clima de um dia.",
+const motivos = [
+     "Porque seu sorriso consegue mudar completamente o clima de um dia.",
 
     "Porque seu jeito de ser é uma das coisas que mais me encanta em você.",
 
@@ -272,7 +274,6 @@ const motivos = [
     "Porque eu sou muito feliz por ter conhecido você.",
 
     "Porque, no fim de todos esses motivos, existe um que explica todos os outros: eu gosto muito de você. ❤️"
-
 ];
 
 const motivoBtn = document.getElementById("motivoBtn");
@@ -368,28 +369,29 @@ function partesDoTempo(ms){
 
 }
 
-function montarCaixasDeTempo(partes){
+function atualizarCaixasDeTempo(elemento, partes){
 
-    return `
-        <div>
-            <span>${partes.dias}</span>
-            <small>Dias</small>
-        </div>
-        <div>
-            <span>${partes.horas}</span>
-            <small>Horas</small>
-        </div>
-        <div>
-            <span>${partes.minutos}</span>
-            <small>Minutos</small>
-        </div>
-        <div>
-            <span>${partes.segundos}</span>
-            <small>Segundos</small>
-        </div>
-    `;
+  
+    if(elemento.dataset.montado !== "1"){
+
+        elemento.innerHTML = `
+            <div><span class="valor-dias"></span><small>Dias</small></div>
+            <div><span class="valor-horas"></span><small>Horas</small></div>
+            <div><span class="valor-minutos"></span><small>Minutos</small></div>
+            <div><span class="valor-segundos"></span><small>Segundos</small></div>
+        `;
+
+        elemento.dataset.montado = "1";
+
+    }
+
+    elemento.querySelector(".valor-dias").textContent = partes.dias;
+    elemento.querySelector(".valor-horas").textContent = partes.horas;
+    elemento.querySelector(".valor-minutos").textContent = partes.minutos;
+    elemento.querySelector(".valor-segundos").textContent = partes.segundos;
 
 }
+
 
 const observer = new IntersectionObserver((entries) => {
 
@@ -431,7 +433,6 @@ document.addEventListener("click", (e) => {
 
 });
 
-
 const canvas = document.getElementById("stars");
 
 if(canvas){
@@ -441,9 +442,10 @@ if(canvas){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    const quantidadeEstrelas = window.innerWidth < 640 ? 70 : 110;
     const stars = [];
 
-    for(let i = 0; i < 180; i++){
+    for(let i = 0; i < quantidadeEstrelas; i++){
 
         stars.push({
             x: Math.random() * canvas.width,
@@ -455,7 +457,11 @@ if(canvas){
 
     }
 
+    let animandoEstrelas = false;
+
     function drawStars(){
+
+        if(document.hidden) return;
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -478,7 +484,24 @@ if(canvas){
 
     }
 
-    drawStars();
+    
+    function cuidarVisibilidade(){
+
+        if(document.hidden){
+            animandoEstrelas = false;
+            return;
+        }
+
+        if(!animandoEstrelas){
+            animandoEstrelas = true;
+            drawStars();
+        }
+
+    }
+
+    document.addEventListener("visibilitychange", cuidarVisibilidade);
+
+    cuidarVisibilidade();
 
     window.addEventListener("resize", () => {
         canvas.width = window.innerWidth;
@@ -487,7 +510,12 @@ if(canvas){
 
 }
 
+
+const ehTelaPequena = window.innerWidth < 640;
+
 function criarCoracao(){
+
+    if(document.hidden) return;
 
     const heart = document.createElement("div");
 
@@ -505,10 +533,12 @@ function criarCoracao(){
 
 }
 
-setInterval(criarCoracao, 600);
+setInterval(criarCoracao, ehTelaPequena ? 1100 : 700);
 
 
 function criarParticula(){
+
+    if(document.hidden) return;
 
     const sparkle = document.createElement("div");
 
@@ -525,53 +555,58 @@ function criarParticula(){
 
 }
 
-setInterval(criarParticula, 450);
+setInterval(criarParticula, ehTelaPequena ? 900 : 550);
 
+
+const temMouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
 let ultimoBrilho = 0;
 
-document.addEventListener("mousemove", (e) => {
+if(temMouse){
 
-    const agora = performance.now();
+    document.addEventListener("mousemove", (e) => {
 
-    if(agora - ultimoBrilho < 45) return;
-    ultimoBrilho = agora;
+        const agora = performance.now();
 
-    const brilho = document.createElement("div");
+        if(agora - ultimoBrilho < 45) return;
+        ultimoBrilho = agora;
 
-    brilho.style.position = "fixed";
-    brilho.style.left = e.clientX + "px";
-    brilho.style.top = e.clientY + "px";
-    brilho.style.width = "8px";
-    brilho.style.height = "8px";
-    brilho.style.borderRadius = "50%";
-    brilho.style.background = "#ffffff";
-    brilho.style.boxShadow = "0 0 15px #fff";
-    brilho.style.pointerEvents = "none";
-    brilho.style.opacity = ".9";
-    brilho.style.transition = ".8s";
-    brilho.style.zIndex = "9999";
+        const brilho = document.createElement("div");
 
-    document.body.appendChild(brilho);
+        brilho.style.position = "fixed";
+        brilho.style.left = e.clientX + "px";
+        brilho.style.top = e.clientY + "px";
+        brilho.style.width = "8px";
+        brilho.style.height = "8px";
+        brilho.style.borderRadius = "50%";
+        brilho.style.background = "#ffffff";
+        brilho.style.boxShadow = "0 0 15px #fff";
+        brilho.style.pointerEvents = "none";
+        brilho.style.opacity = ".9";
+        brilho.style.transition = ".8s";
+        brilho.style.zIndex = "9999";
 
-    setTimeout(() => {
-        brilho.style.opacity = "0";
-        brilho.style.transform = "scale(3)";
-    }, 10);
+        document.body.appendChild(brilho);
 
-    setTimeout(() => {
-        brilho.remove();
-    }, 800);
+        setTimeout(() => {
+            brilho.style.opacity = "0";
+            brilho.style.transform = "scale(3)";
+        }, 10);
 
-});
+        setTimeout(() => {
+            brilho.remove();
+        }, 800);
 
+    });
+
+}
 
 const backgroundDecor = document.getElementById("backgroundDecor");
 
 if(backgroundDecor){
 
     const imagensDecor = ["clove1.png", "clove2.png", "clove3.png", "clove4.png"];
-    let decorEls = [];
+    const quantidadeDecor = window.innerWidth < 640 ? 16 : 32;
 
     function podeColocar(x, y, tamanho, posicoes){
 
@@ -600,7 +635,7 @@ if(backgroundDecor){
 
         let ultimaImagem = -1;
 
-        for(let i = 0; i < 60; i++){
+        for(let i = 0; i < quantidadeDecor; i++){
 
             let indice;
 
@@ -639,35 +674,15 @@ if(backgroundDecor){
 
         }
 
-        decorEls = Array.from(backgroundDecor.querySelectorAll(".decor"));
-
     }
 
     criarDecoracoes();
 
-    window.addEventListener("load", criarDecoracoes);
-    window.addEventListener("resize", criarDecoracoes);
+    let redimensionando;
 
-    let scrollTicking = false;
-
-    window.addEventListener("scroll", () => {
-
-        if(scrollTicking) return;
-        scrollTicking = true;
-
-        requestAnimationFrame(() => {
-
-            const scroll = window.pageYOffset;
-
-            decorEls.forEach((img, index) => {
-                const velocidade = (index % 5 + 1) * 0.08;
-                img.style.transform = `translateY(${scroll * velocidade}px) rotate(${index * 35}deg)`;
-            });
-
-            scrollTicking = false;
-
-        });
-
+    window.addEventListener("resize", () => {
+        clearTimeout(redimensionando);
+        redimensionando = setTimeout(criarDecoracoes, 300);
     });
 
 }

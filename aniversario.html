@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>🎂 aniversário</title>
+    <title>Aniversário</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -22,17 +22,17 @@
     <canvas id="stars"></canvas>
     <div id="backgroundDecor" class="background-decor"></div>
 
-    <audio id="music" loop>
+    <audio id="music" loop preload="none">
         <source src="music.mp3" type="audio/mp3">
     </audio>
 
     <div class="site-nav">
-        <button id="navToggle" class="nav-toggle" aria-label="Abrir menu">🦋</button>
+        <button id="navToggle" class="nav-toggle" aria-label="Abrir menu">☰</button>
         <div class="nav-menu" id="navMenu">
-            <a href="index.html">🏠 Início</a>
-            <a href="motivos.html">💌 100 Motivos</a>
-            <a href="galeria.html">📷 Galeria</a>
-            <a href="aniversario.html">🎂 Aniversário</a>
+            <a href="index.html">Início</a>
+            <a href="motivos.html">100 Motivos</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="aniversario.html">Aniversário</a>
         </div>
     </div>
 
@@ -49,7 +49,7 @@
             Esse site foi feito especialmente para você.
         </p>
 
-        <span class="memory-badge"> guardado aqui, intacto, do jeitinho que te entreguei</span>
+        <span class="memory-badge">💌 guardado aqui, intacto, do jeitinho que te entreguei</span>
 
         <button id="playMusic" class="btn">
             <i class="fa-solid fa-play"></i>
@@ -138,13 +138,16 @@
 
         <div class="gallery">
 
-            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto1.jpg" alt="Foto 1" loading="lazy">
 
-            <img src="foto2.jpg" alt="Foto 2">
+            <img src="foto2.jpg" alt="Foto 2" loading="lazy">
 
-            <img src="foto3.jpg" alt="Foto 3">
+            <img src="foto3.jpg" alt="Foto 3" loading="lazy">
+
+           
 
             <img src="foto5.jpg" alt="Foto 5" class="foto5">
+
         </div>
 
         <section class="future-gallery">
@@ -155,7 +158,7 @@
 
                 <div class="photo-placeholder">
 
-                    <img src="foto4.jpg" alt="Foto 1">
+                    <img src="foto4.jpg" alt="Foto 1" loading="lazy">
 
                 </div>
 

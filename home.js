@@ -1,3 +1,6 @@
+
+
+/* ---------- Frase do dia (muda uma vez por dia, sozinha) ---------- */
 const frasesDoDia = [
     "Hoje, assim como todo dia, eu escolho você.",
     "Só passando aqui pra lembrar que eu penso em você.",
@@ -29,7 +32,7 @@ if(fraseDoDiaEl){
 
 }
 
-
+/* ---------- Um carinho pra qualquer dia ---------- */
 configurarPresente(`
     Só um lembrete de que eu penso em você bem mais do que você imagina. ❤️<br><br>
 
@@ -40,6 +43,7 @@ configurarPresente(`
     Obrigado por dividir a sua vida com a minha.
 `, "💌 Aberto com carinho");
 
+/* ---------- Nosso tempo ---------- */
 const timerJuntos = document.getElementById("timerJuntos");
 const timerProximoAniversario = document.getElementById("timerProximoAniversario");
 
@@ -72,7 +76,7 @@ function atualizarTempoJuntos(){
         return;
     }
 
-    timerJuntos.innerHTML = montarCaixasDeTempo(partesDoTempo(decorrido));
+    atualizarCaixasDeTempo(timerJuntos, partesDoTempo(decorrido));
 
 }
 
@@ -88,7 +92,7 @@ function atualizarProximoAniversario(){
         return;
     }
 
-    timerProximoAniversario.innerHTML = montarCaixasDeTempo(partesDoTempo(diferenca));
+    atualizarCaixasDeTempo(timerProximoAniversario, partesDoTempo(diferenca));
 
 }
 

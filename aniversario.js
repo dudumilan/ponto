@@ -1,3 +1,6 @@
+
+
+
 configurarPresente(`
     Feliz aniversário! ❤️<br><br>
 
@@ -12,6 +15,7 @@ configurarPresente(`
 
     Aproveite muito o seu dia.
 `, "🎉 Presente Aberto");
+
 
 const timerBirthday = document.getElementById("timerBirthday");
 const timerMeet = document.getElementById("timerMeet");
@@ -28,7 +32,7 @@ function atualizarContador(dataAlvo, elemento){
         return;
     }
 
-    elemento.innerHTML = montarCaixasDeTempo(partesDoTempo(diferenca));
+    atualizarCaixasDeTempo(elemento, partesDoTempo(diferenca));
 
 }
 
